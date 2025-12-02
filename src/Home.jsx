@@ -9,6 +9,11 @@ function Home() {
         message: ''
     })
     const [submitStatus, setSubmitStatus] = useState('')
+    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
+
+    const handleMouseMove = (e) => {
+        setCursorPosition({ x: e.clientX, y: e.clientY })
+    }
 
     const handleChange = (e) => {
         setFormData({
@@ -44,7 +49,14 @@ function Home() {
     }
 
     return (
-        <div className="home-page">
+        <div className="home-page" onMouseMove={handleMouseMove}>
+            <div
+                className="cursor-flare"
+                style={{
+                    left: cursorPosition.x,
+                    top: cursorPosition.y
+                }}
+            ></div>
             {/* Hero Section */}
             <section className="hero">
                 <div className="hero-background"></div>
