@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react'
+import config from './config'
 import './About.css'
 
 function About() {
     const [teamMembers, setTeamMembers] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-
     useEffect(() => {
         fetchTeamMembers()
     }, [])
 
     const fetchTeamMembers = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/team')
+            const response = await fetch(`${config.API_URL}/api/team`)
             if (!response.ok) {
                 throw new Error('Failed to fetch team members')
             }

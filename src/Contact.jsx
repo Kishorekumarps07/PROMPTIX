@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import config from './config'
 import './Contact.css'
 
 function Contact() {
@@ -58,7 +59,7 @@ function Contact() {
         setSubmitStatus('sending')
 
         try {
-            const response = await fetch('http://localhost:5000/api/contact', {
+            const response = await fetch(`${config.API_URL}/api/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -90,8 +91,8 @@ function Contact() {
                     <div className="header-content animate-fade-in-up">
                         <h1>Get In Touch</h1>
                         <p className="header-subtitle">
-                            Have a question or want to work together? We'd love to hear from you.
-                            Fill out the form below and we'll get back to you as soon as possible.
+                            Ready to transform your challenges into solutions? We'd love to hear from you.
+                            Reach out to PromptiX and let's create something amazing together.
                         </p>
                     </div>
                 </div>
@@ -109,7 +110,7 @@ function Contact() {
                                     <div className="info-icon">📧</div>
                                     <div className="info-content">
                                         <h3>Email</h3>
-                                        <p>contact@modernwebsite.com</p>
+                                        <p>hello@promptix.com</p>
                                     </div>
                                 </div>
 
@@ -117,7 +118,7 @@ function Contact() {
                                     <div className="info-icon">📱</div>
                                     <div className="info-content">
                                         <h3>Phone</h3>
-                                        <p>+1 (555) 123-4567</p>
+                                        <p>+1 (555) 789-0123</p>
                                     </div>
                                 </div>
 
