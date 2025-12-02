@@ -1,0 +1,165 @@
+import { useState } from 'react'
+import './Home.css'
+
+function Home() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
+    const [submitStatus, setSubmitStatus] = useState('')
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setSubmitStatus('sending')
+
+        try {
+            const response = await fetch('http://localhost:5000/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+
+            if (response.ok) {
+                setSubmitStatus('success')
+                setFormData({ name: '', email: '', message: '' })
+                setTimeout(() => setSubmitStatus(''), 3000)
+            } else {
+                setSubmitStatus('error')
+            }
+        } catch (error) {
+            console.error('Error:', error)
+            setSubmitStatus('error')
+        }
+    }
+
+    return (
+        <div className="home-page">
+            {/* Hero Section */}
+            <section className="hero">
+                <div className="hero-background"></div>
+                <div className="container">
+                    <div className="hero-content">
+                        <h1 className="animate-fade-in-up">
+                            Welcome to PromptiX
+                        </h1>
+                        <p className="hero-tagline animate-fade-in-up animate-delay-1">
+                            a solution Company
+                        </p>
+                        <p className="hero-subtitle animate-fade-in-up animate-delay-2">
+                            Transforming challenges into innovative solutions with cutting-edge technology and creative excellence
+                        </p>
+                        <div className="hero-buttons animate-fade-in-up animate-delay-3">
+                            <a href="#services" className="btn btn-primary">Explore Solutions</a>
+                            <a href="#contact" className="btn btn-secondary">Get Started</a>
+                        </div>
+                    </div>
+                    <div className="hero-decoration animate-float">
+                        <div className="decoration-circle"></div>
+                        <div className="decoration-circle"></div>
+                        <div className="decoration-circle"></div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Services Section */}
+            <section id="services" className="services">
+                <div className="container">
+                    <h2 className="text-center mb-2xl">Our Solutions</h2>
+                    <div className="grid grid-3">
+                        <div className="card animate-fade-in-up">
+                            <div className="service-icon">🚀</div>
+                            <h3>Digital Solutions</h3>
+                            <p>
+                                Custom web and mobile applications tailored to your business needs.
+                                We transform your ideas into powerful digital experiences that drive growth.
+                            </p>
+                        </div>
+
+                        <div className="card animate-fade-in-up animate-delay-1">
+                            <div className="service-icon">💡</div>
+                            <h3>Innovation Consulting</h3>
+                            <p>
+                                Strategic guidance to navigate digital transformation.
+                                We help you identify opportunities and implement solutions that matter.
+                            </p>
+                        </div>
+
+                        <div className="card animate-fade-in-up animate-delay-2">
+                            <div className="service-icon">⚡</div>
+                            <h3>Tech Integration</h3>
+                            <p>
+                                Seamless integration of modern technologies into your workflow.
+                                From APIs to automation, we make technology work for you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Contact Section */}
+            <section id="contact" className="contact">
+                <div className="container">
+                    <h2 className="text-center mb-2xl">Get In Touch</h2>
+                    <div className="contact-wrapper">
+                        <form onSubmit={handleSubmit} className="contact-form">
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Your Email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <textarea
+                                    name="message"
+                                    placeholder="Your Message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" className="btn btn-primary" disabled={submitStatus === 'sending'}>
+                                {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
+                            </button>
+
+                            {submitStatus === 'success' && (
+                                <p className="status-message success">Message sent successfully! 🎉</p>
+                            )}
+                            {submitStatus === 'error' && (
+                                <p className="status-message error">Failed to send message. Please try again.</p>
+                            )}
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    )
+}
+
+export default Home
