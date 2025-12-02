@@ -1,5 +1,7 @@
 .app {
   min-height: 100vh;
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 /* Navigation Bar */
@@ -8,9 +10,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(15, 15, 35, 0.95);
+  background: var(--bg-card-hover);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border-color);
   padding: var(--spacing-md) 0;
   z-index: 1000;
   transition: all var(--transition-normal);
@@ -73,15 +75,17 @@
 
 /* Add padding to account for fixed navbar */
 .home-page,
-.about-page {
+.about-page,
+.contact-page {
   padding-top: 80px;
 }
 
 /* Footer */
 .footer {
-  background: var(--bg-darker);
+  background: var(--bg-secondary);
   padding: var(--spacing-2xl) 0 var(--spacing-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
 }
 
 .footer-content {
@@ -94,6 +98,7 @@
 .footer-section h3,
 .footer-section h4 {
   margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
 }
 
 .footer-section p {
@@ -135,7 +140,7 @@
   color: var(--text-secondary);
   text-decoration: none;
   padding: var(--spacing-xs) var(--spacing-sm);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
 }
@@ -149,7 +154,7 @@
 .footer-bottom {
   text-align: center;
   padding-top: var(--spacing-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-bottom p {
