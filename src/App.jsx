@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { ThemeProvider } from './ThemeContext'
 import ThemeToggle from './ThemeToggle'
 import StarBackground from './StarBackground'
+import ClickEffect from './ClickEffect'
 import Home from './Home'
 import About from './About'
 import Contact from './Contact'
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <div className="app">
           <StarBackground />
+          <ClickEffect />
           {/* Navigation */}
           <nav className="navbar">
             <div className="container">
