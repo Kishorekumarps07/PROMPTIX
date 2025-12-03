@@ -2,14 +2,14 @@
 
 .about-page {
     min-height: 100vh;
-    background: var(--bg-primary);
+    /* background: var(--bg-primary); Removed to show stars */
     transition: background-color 0.3s ease;
 }
 
 /* Company Intro Section */
 .company-intro {
     padding: var(--spacing-3xl) 0 var(--spacing-2xl);
-    background: var(--bg-primary);
+    /* background: var(--bg-primary); Removed to show stars */
     text-align: center;
 }
 
@@ -28,7 +28,7 @@
 /* Mission & Vision Section */
 .mission-vision {
     padding: var(--spacing-3xl) 0;
-    background: var(--bg-primary);
+    /* background: var(--bg-primary); Removed to show stars */
 }
 
 .grid-2 {
@@ -73,7 +73,7 @@
 /* Team Section */
 .team-section {
     padding: var(--spacing-3xl) 0;
-    background: var(--bg-primary);
+    /* background: var(--bg-primary); Removed to show stars */
 }
 
 .team-card {

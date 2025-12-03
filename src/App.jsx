@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { ThemeProvider } from './ThemeContext'
 import ThemeToggle from './ThemeToggle'
+import StarBackground from './StarBackground'
 import Home from './Home'
 import About from './About'
 import Contact from './Contact'
@@ -11,6 +12,7 @@ function App() {
     <ThemeProvider>
       <Router>
         <div className="app">
+          <StarBackground />
           {/* Navigation */}
           <nav className="navbar">
             <div className="container">

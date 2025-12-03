@@ -2,7 +2,7 @@
 
 .contact-page {
     min-height: 100vh;
-    background: var(--bg-primary);
+    /* background: var(--bg-primary); Removed to show stars */
     transition: background-color 0.3s ease;
     overflow-x: hidden;
 }
@@ -10,7 +10,7 @@
 /* Header Section */
 .contact-header {
     padding: var(--spacing-3xl) 0 var(--spacing-2xl);
-    background: var(--bg-primary);
+    /* background: var(--bg-primary); Removed to show stars */
     text-align: center;
     position: relative;
     overflow: hidden;
