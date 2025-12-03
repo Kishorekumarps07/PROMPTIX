@@ -87,6 +87,10 @@ function Contact() {
         <div className="contact-page">
             {/* Header Section */}
             <section className="contact-header">
+                <div className="contact-decoration animate-float">
+                    <div className="decoration-circle"></div>
+                    <div className="decoration-circle"></div>
+                </div>
                 <div className="container">
                     <div className="header-content animate-fade-in-up">
                         <h1>Get In Touch</h1>
@@ -106,7 +110,7 @@ function Contact() {
                         <div className="contact-info animate-fade-in-up">
                             <h2>Contact Information</h2>
                             <div className="info-items">
-                                <div className="info-item">
+                                <div className="info-item animate-fade-in-up animate-delay-1">
                                     <div className="info-icon">📧</div>
                                     <div className="info-content">
                                         <h3>Email</h3>
@@ -114,7 +118,7 @@ function Contact() {
                                     </div>
                                 </div>
 
-                                <div className="info-item">
+                                <div className="info-item animate-fade-in-up animate-delay-2">
                                     <div className="info-icon">📱</div>
                                     <div className="info-content">
                                         <h3>Phone</h3>
@@ -122,7 +126,7 @@ function Contact() {
                                     </div>
                                 </div>
 
-                                <div className="info-item">
+                                <div className="info-item animate-fade-in-up animate-delay-3">
                                     <div className="info-icon">📍</div>
                                     <div className="info-content">
                                         <h3>Location</h3>
@@ -130,7 +134,7 @@ function Contact() {
                                     </div>
                                 </div>
 
-                                <div className="info-item">
+                                <div className="info-item animate-fade-in-up animate-delay-4">
                                     <div className="info-icon">⏰</div>
                                     <div className="info-content">
                                         <h3>Business Hours</h3>
