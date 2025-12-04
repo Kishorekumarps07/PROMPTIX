@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
+import { useToast } from './ToastContext'
 import config from './config'
 import './Home.css'
 import './ScrollAnimations.css'
 
 function Home() {
+    const toast = useToast()
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -45,15 +47,17 @@ function Home() {
             })
 
             if (response.ok) {
-                setSubmitStatus('success')
+                setSubmitStatus('')
                 setFormData({ name: '', email: '', message: '' })
-                setTimeout(() => setSubmitStatus(''), 3000)
+                toast.success('Message sent successfully! We\'ll get back to you soon.')
             } else {
-                setSubmitStatus('error')
+                setSubmitStatus('')
+                toast.error('Failed to send message. Please try again or contact us directly.')
             }
         } catch (error) {
             console.error('Error:', error)
-            setSubmitStatus('error')
+            setSubmitStatus('')
+            toast.error('Network error. Please check your connection and try again.')
         }
     }
 
@@ -188,13 +192,6 @@ function Home() {
                             <button type="submit" className="btn btn-primary" disabled={submitStatus === 'sending'}>
                                 {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
                             </button>
-
-                            {submitStatus === 'success' && (
-                                <p className="status-message success">Message sent successfully! 🎉</p>
-                            )}
-                            {submitStatus === 'error' && (
-                                <p className="status-message error">Failed to send message. Please try again.</p>
-                            )}
                         </form>
                     </div>
                 </div>

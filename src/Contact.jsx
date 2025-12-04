@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useToast } from './ToastContext'
 import config from './config'
 import './Contact.css'
 
 function Contact() {
+    const toast = useToast()
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -70,16 +72,19 @@ function Contact() {
             const data = await response.json()
 
             if (response.ok) {
-                setSubmitStatus('success')
+                setSubmitStatus('')
                 setFormData({ name: '', email: '', message: '' })
-                setTimeout(() => setSubmitStatus(''), 5000)
+                setErrors({})
+                toast.success('Message sent successfully! We\'ll get back to you soon.')
             } else {
-                setSubmitStatus('error')
+                setSubmitStatus('')
+                toast.error('Failed to send message. Please try again or contact us directly.')
                 console.error('Server error:', data)
             }
         } catch (error) {
             console.error('Error:', error)
-            setSubmitStatus('error')
+            setSubmitStatus('')
+            toast.error('Network error. Please check your connection and try again.')
         }
     }
 
