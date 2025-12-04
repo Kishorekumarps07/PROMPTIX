@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
 import { useTypingEffect } from './hooks/useTypingEffect'
 import { useToast } from './ToastContext'
+import Testimonials from './Testimonials'
 import config from './config'
 import './Home.css'
 import './ScrollAnimations.css'
@@ -157,6 +158,9 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* Testimonials Section */}
+            <Testimonials />
 
             {/* Contact Section */}
             <section id="contact" className="contact">
