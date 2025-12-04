@@ -4,6 +4,7 @@ import { useTypingEffect } from './hooks/useTypingEffect'
 import { useToast } from './ToastContext'
 import Testimonials from './Testimonials'
 import FAQ from './FAQ'
+import Newsletter from './Newsletter'
 import config from './config'
 import './Home.css'
 import './ScrollAnimations.css'
@@ -165,6 +166,9 @@ function Home() {
 
             {/* FAQ Section */}
             <FAQ />
+
+            {/* Newsletter Section */}
+            <Newsletter />
 
             {/* Contact Section */}
             <section id="contact" className="contact">
