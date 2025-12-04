@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useScrollAnimation } from './hooks/useScrollAnimation'
 import config from './config'
 import './Home.css'
+import './ScrollAnimations.css'
 
 function Home() {
     const [formData, setFormData] = useState({
@@ -10,6 +12,13 @@ function Home() {
     })
     const [submitStatus, setSubmitStatus] = useState('')
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
+
+    // Scroll animation hooks
+    const [servicesRef, servicesVisible] = useScrollAnimation()
+    const [card1Ref, card1Visible] = useScrollAnimation()
+    const [card2Ref, card2Visible] = useScrollAnimation()
+    const [card3Ref, card3Visible] = useScrollAnimation()
+    const [contactRef, contactVisible] = useScrollAnimation()
 
     const handleMouseMove = (e) => {
         setCursorPosition({ x: e.clientX, y: e.clientY })
@@ -87,9 +96,17 @@ function Home() {
             {/* Services Section */}
             <section id="services" className="services">
                 <div className="container">
-                    <h2 className="text-center mb-2xl">Our Solutions</h2>
+                    <h2
+                        ref={servicesRef}
+                        className={`text-center mb-2xl scroll-animate fade-in-up ${servicesVisible ? 'visible' : ''}`}
+                    >
+                        Our Solutions
+                    </h2>
                     <div className="grid grid-3">
-                        <div className="card animate-fade-in-up">
+                        <div
+                            ref={card1Ref}
+                            className={`card scroll-animate scale-in ${card1Visible ? 'visible' : ''}`}
+                        >
                             <div className="service-icon">🚀</div>
                             <h3>Digital Solutions</h3>
                             <p>
@@ -98,7 +115,10 @@ function Home() {
                             </p>
                         </div>
 
-                        <div className="card animate-fade-in-up animate-delay-1">
+                        <div
+                            ref={card2Ref}
+                            className={`card scroll-animate scale-in stagger-1 ${card2Visible ? 'visible' : ''}`}
+                        >
                             <div className="service-icon">💡</div>
                             <h3>Innovation Consulting</h3>
                             <p>
@@ -107,7 +127,10 @@ function Home() {
                             </p>
                         </div>
 
-                        <div className="card animate-fade-in-up animate-delay-2">
+                        <div
+                            ref={card3Ref}
+                            className={`card scroll-animate scale-in stagger-2 ${card3Visible ? 'visible' : ''}`}
+                        >
                             <div className="service-icon">⚡</div>
                             <h3>Tech Integration</h3>
                             <p>
@@ -122,7 +145,12 @@ function Home() {
             {/* Contact Section */}
             <section id="contact" className="contact">
                 <div className="container">
-                    <h2 className="text-center mb-2xl">Get In Touch</h2>
+                    <h2
+                        ref={contactRef}
+                        className={`text-center mb-2xl scroll-animate fade-in-down ${contactVisible ? 'visible' : ''}`}
+                    >
+                        Get In Touch
+                    </h2>
                     <div className="contact-wrapper">
                         <form onSubmit={handleSubmit} className="contact-form">
                             <div className="form-group">

@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react'
+import { useScrollAnimation } from './hooks/useScrollAnimation'
 import config from './config'
 import './About.css'
+import './ScrollAnimations.css'
 
 function About() {
     const [teamMembers, setTeamMembers] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+
+    // Scroll animation hooks
+    const [missionRef, missionVisible] = useScrollAnimation()
+    const [visionRef, visionVisible] = useScrollAnimation()
+    const [teamRef, teamVisible] = useScrollAnimation()
     useEffect(() => {
         fetchTeamMembers()
     }, [])
@@ -45,7 +52,10 @@ function About() {
             <section className="mission-vision">
                 <div className="container">
                     <div className="grid grid-2">
-                        <div className="card mission-card animate-fade-in-up">
+                        <div
+                            ref={missionRef}
+                            className={`card mission-card scroll-animate fade-in-left ${missionVisible ? 'visible' : ''}`}
+                        >
                             <div className="icon-wrapper">
                                 <span className="section-icon">🎯</span>
                             </div>
@@ -57,7 +67,10 @@ function About() {
                             </p>
                         </div>
 
-                        <div className="card vision-card animate-fade-in-up animate-delay-1">
+                        <div
+                            ref={visionRef}
+                            className={`card vision-card scroll-animate fade-in-right ${visionVisible ? 'visible' : ''}`}
+                        >
                             <div className="icon-wrapper">
                                 <span className="section-icon">🚀</span>
                             </div>
@@ -75,7 +88,12 @@ function About() {
             {/* Team Section */}
             <section className="team-section">
                 <div className="container">
-                    <h2 className="text-center mb-2xl">Meet Our Team</h2>
+                    <h2
+                        ref={teamRef}
+                        className={`text-center mb-2xl scroll-animate fade-in-up ${teamVisible ? 'visible' : ''}`}
+                    >
+                        Meet Our Team
+                    </h2>
 
                     {loading && (
                         <div className="loading-state">
