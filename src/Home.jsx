@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
+import { useTypingEffect } from './hooks/useTypingEffect'
 import { useToast } from './ToastContext'
 import config from './config'
 import './Home.css'
@@ -7,6 +8,17 @@ import './ScrollAnimations.css'
 
 function Home() {
     const toast = useToast()
+
+    // Typing effect for hero subtitle
+    const phrases = [
+        'a solution Company',
+        'Innovative Technology',
+        'Digital Transformation',
+        'Creative Excellence',
+        'Your Success Partner'
+    ]
+    const typedText = useTypingEffect(phrases, 100, 50, 2000)
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -79,7 +91,7 @@ function Home() {
                             Welcome to PromptiX
                         </h1>
                         <p className="hero-tagline animate-fade-in-up animate-delay-1">
-                            a solution Company
+                            {typedText}<span className="typing-cursor">|</span>
                         </p>
                         <p className="hero-subtitle animate-fade-in-up animate-delay-2">
                             Transforming challenges into innovative solutions with cutting-edge technology and creative excellence
