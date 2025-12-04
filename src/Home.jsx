@@ -3,6 +3,7 @@ import { useScrollAnimation } from './hooks/useScrollAnimation'
 import { useTypingEffect } from './hooks/useTypingEffect'
 import { useToast } from './ToastContext'
 import Testimonials from './Testimonials'
+import FAQ from './FAQ'
 import config from './config'
 import './Home.css'
 import './ScrollAnimations.css'
@@ -161,6 +162,9 @@ function Home() {
 
             {/* Testimonials Section */}
             <Testimonials />
+
+            {/* FAQ Section */}
+            <FAQ />
 
             {/* Contact Section */}
             <section id="contact" className="contact">
