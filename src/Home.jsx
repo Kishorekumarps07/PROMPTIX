@@ -6,6 +6,7 @@ import Testimonials from './Testimonials'
 import FAQ from './FAQ'
 import Newsletter from './Newsletter'
 import PricingCalculator from './PricingCalculator'
+import Blog from './Blog'
 import config from './config'
 import './Home.css'
 import './ScrollAnimations.css'
@@ -173,6 +174,9 @@ function Home() {
 
             {/* Pricing Calculator Section */}
             <PricingCalculator />
+
+            {/* Blog Section */}
+            <Blog />
 
             {/* Contact Section */}
             <section id="contact" className="contact">
