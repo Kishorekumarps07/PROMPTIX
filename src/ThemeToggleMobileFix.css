@@ -1,3 +1,105 @@
+/* Theme Toggle Mobile Fix */
+
+/* Mobile header theme toggle - Always visible in navbar */
+.mobile-header-theme {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Show theme toggle in mobile header */
+    .mobile-header-theme {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-right: 1rem !important;
+    }
+
+    .mobile-header-theme .theme-toggle-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.5rem !important;
+        padding: 0.5rem !important;
+        background: var(--bg-card) !important;
+        border-radius: var(--radius-md) !important;
+        border: 2px solid var(--border-color) !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        min-width: 45px !important;
+        min-height: 45px !important;
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    .mobile-header-theme .theme-toggle-btn:active {
+        transform: scale(0.9) !important;
+        background: var(--primary-color) !important;
+    }
+
+    /* Mobile controls layout */
+    .mobile-controls {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+    }
+
+    /* Desktop theme toggle - hide on mobile */
+    .desktop-nav .theme-toggle-btn {
+        display: none !important;
+    }
+
+    /* Mobile menu theme toggle - keep it for consistency */
+    .mobile-theme-toggle {
+        display: flex !important;
+        justify-content: center !important;
+        padding: 1.5rem 0 !important;
+        border-top: 1px solid var(--border-color) !important;
+        margin-top: 1rem !important;
+    }
+
+    .mobile-theme-toggle .theme-toggle-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 2rem !important;
+        padding: 1rem !important;
+        background: var(--bg-card) !important;
+        border-radius: var(--radius-md) !important;
+        border: 2px solid var(--border-color) !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        min-width: 60px !important;
+        min-height: 60px !important;
+    }
+
+    .mobile-theme-toggle .theme-toggle-btn:active {
+        transform: scale(0.95) !important;
+        background: var(--primary-color) !important;
+    }
+
+    /* Theme-aware styling for header toggle */
+    [data-theme="dark"] .mobile-header-theme .theme-toggle-btn {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    [data-theme="light"] .mobile-header-theme .theme-toggle-btn {
+        background: rgba(0, 0, 0, 0.05) !important;
+        border-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Theme-aware styling for menu toggle */
+    [data-theme="dark"] .mobile-theme-toggle .theme-toggle-btn {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    [data-theme="light"] .mobile-theme-toggle .theme-toggle-btn {
+        background: rgba(0, 0, 0, 0.05) !important;
+        border-color: rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
 /* Ensure theme toggle works on touch devices */
 .theme-toggle-btn {
     -webkit-tap-highlight-color: transparent;
