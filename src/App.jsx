@@ -13,6 +13,7 @@ import './SmoothScroll.css';
 import './GlobalBackground.css';
 import './MobileOptimizations.css';
 import './MobileFixes.css';
+import './FinalMobileFix.css'; // MUST BE LAST!
 
 // Lazy load heavy components
 const Home = lazy(() => import('./Home'));
