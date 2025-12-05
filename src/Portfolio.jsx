@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
+import ImageLightbox from './ImageLightbox';
 import './Portfolio.css';
 import './ScrollAnimations.css';
 
@@ -7,6 +8,9 @@ const Portfolio = () => {
     const [sectionRef, sectionVisible] = useScrollAnimation();
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [selectedProject, setSelectedProject] = useState(null);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [lightboxImages, setLightboxImages] = useState([]);
+    const [lightboxIndex, setLightboxIndex] = useState(0);
 
     const projects = [
         {
@@ -167,7 +171,23 @@ const Portfolio = () => {
                             onClick={() => setSelectedProject(project)}
                         >
                             <div className="portfolio-image">
-                                <span className="portfolio-emoji">{project.image}</span>
+                                <span
+                                    className="portfolio-emoji"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setLightboxImages([{
+                                            type: 'emoji',
+                                            src: project.image,
+                                            title: project.title,
+                                            caption: project.description
+                                        }]);
+                                        setLightboxIndex(0);
+                                        setLightboxOpen(true);
+                                    }}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    {project.image}
+                                </span>
                                 <div className="portfolio-overlay">
                                     <button className="view-details-btn">View Case Study</button>
                                 </div>
@@ -256,6 +276,15 @@ const Portfolio = () => {
                         </div>
                     </div>
                 </div>
+            )}
+
+            {/* Image Lightbox */}
+            {lightboxOpen && (
+                <ImageLightbox
+                    images={lightboxImages}
+                    initialIndex={lightboxIndex}
+                    onClose={() => setLightboxOpen(false)}
+                />
             )}
         </section>
     );
