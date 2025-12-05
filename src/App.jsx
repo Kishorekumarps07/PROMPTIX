@@ -5,6 +5,7 @@ import ThemeToggle from './ThemeToggle'
 import StarBackground from './StarBackground'
 import ClickEffect from './ClickEffect'
 import BackToTop from './BackToTop'
+import LiveChat from './LiveChat'
 import Home from './Home'
 import About from './About'
 import Contact from './Contact'
@@ -28,6 +29,7 @@ function App() {
           <StarBackground />
           <ClickEffect />
           <BackToTop />
+          <LiveChat />
           {/* Navigation */}
           <nav className="navbar">
             <div className="container">
