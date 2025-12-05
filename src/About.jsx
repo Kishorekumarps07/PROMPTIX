@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
+import { TeamMemberSkeleton } from './SkeletonLoader'
 import config from './config'
 import './About.css'
 import './ScrollAnimations.css'
@@ -96,9 +97,13 @@ function About() {
                     </h2>
 
                     {loading && (
-                        <div className="loading-state">
-                            <div className="spinner"></div>
-                            <p>Loading team members...</p>
+                        <div className="grid grid-3">
+                            <TeamMemberSkeleton />
+                            <TeamMemberSkeleton />
+                            <TeamMemberSkeleton />
+                            <TeamMemberSkeleton />
+                            <TeamMemberSkeleton />
+                            <TeamMemberSkeleton />
                         </div>
                     )}
 
