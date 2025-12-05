@@ -11,10 +11,8 @@ import { useSmoothScroll, useActiveSection } from './hooks/useSmoothScroll';
 import './App.css';
 import './SmoothScroll.css';
 import './GlobalBackground.css';
-import './MobileOptimizations.css';
-import './MobileFixes.css';
-import './FinalMobileFix.css'; // MUST BE LAST!
-import './ThemeToggleMobileFix.css'; // Theme toggle fix for mobile
+import './UltimateMobileFix.css'; // ULTIMATE MOBILE FIX - MUST BE LAST!
+import './ThemeToggleMobileFix.css'; // Theme toggle fix
 
 // Components
 import ErrorBoundary from './ErrorBoundary';
