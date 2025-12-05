@@ -77,8 +77,14 @@ function App() {
                     <ThemeToggle />
                   </div>
 
-                  {/* Mobile Menu Button */}
+                  {/* Mobile Controls (Theme + Menu Button) */}
                   <div className="mobile-controls">
+                    {/* Mobile Theme Toggle - Always visible */}
+                    <div className="mobile-header-theme">
+                      <ThemeToggle />
+                    </div>
+
+                    {/* Mobile Menu Button */}
                     <button
                       className={`mobile-menu-btn ${mobileMenuOpen ? 'open' : ''}`}
                       onClick={toggleMobileMenu}
