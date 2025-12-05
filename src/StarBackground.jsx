@@ -7,7 +7,9 @@ const StarBackground = () => {
     useEffect(() => {
         const generateStars = () => {
             const newStars = [];
-            const starCount = 150;
+            // Reduce stars on mobile for better performance
+            const isMobile = window.innerWidth < 768;
+            const starCount = isMobile ? 75 : 150;
 
             for (let i = 0; i < starCount; i++) {
                 newStars.push({
