@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useToast } from './ToastContext';
+import { useConfetti } from './Confetti';
 import config from './config';
 import './MultiStepContact.css';
 
 const MultiStepContact = () => {
     const toast = useToast();
+    const { showConfetti, triggerConfetti, ConfettiComponent } = useConfetti();
     const [currentStep, setCurrentStep] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -146,6 +148,7 @@ const MultiStepContact = () => {
             });
 
             if (response.ok) {
+                triggerConfetti();
                 toast.success('🎉 Thank you! We\'ll get back to you within 24 hours.');
                 setFormData({
                     name: '', email: '', phone: '', projectType: '', budget: '',
@@ -394,6 +397,9 @@ const MultiStepContact = () => {
                     )}
                 </div>
             </form>
+
+            {/* Confetti Animation */}
+            <ConfettiComponent />
         </div>
     );
 };
