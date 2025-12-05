@@ -6,13 +6,22 @@ import StarBackground from './StarBackground'
 import ClickEffect from './ClickEffect'
 import BackToTop from './BackToTop'
 import LiveChat from './LiveChat'
+import ScrollProgress from './ScrollProgress'
+import { useSmoothScroll, useActiveSection } from './hooks/useSmoothScroll'
 import Home from './Home'
 import About from './About'
 import Contact from './Contact'
 import './App.css'
+import './SmoothScroll.css'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Enable smooth scrolling
+  useSmoothScroll()
+
+  // Track active section for navigation highlighting
+  const activeSection = useActiveSection(['home', 'services', 'contact'])
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
@@ -30,6 +39,7 @@ function App() {
           <ClickEffect />
           <BackToTop />
           <LiveChat />
+          <ScrollProgress />
           {/* Navigation */}
           <nav className="navbar">
             <div className="container">

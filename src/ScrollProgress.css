@@ -1,0 +1,34 @@
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* Pulse animation when at 100% */
+.scroll-progress-bar[style*="100%"] {
+    animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
+    }
+}
