@@ -7,6 +7,7 @@ import FAQ from './FAQ'
 import Newsletter from './Newsletter'
 import PricingCalculator from './PricingCalculator'
 import Blog from './Blog'
+import Portfolio from './Portfolio'
 import config from './config'
 import './Home.css'
 import './ScrollAnimations.css'
@@ -162,6 +163,9 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* Portfolio Section */}
+            <Portfolio />
 
             {/* Testimonials Section */}
             <Testimonials />
