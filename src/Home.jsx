@@ -5,6 +5,7 @@ import { useToast } from './ToastContext'
 import Testimonials from './Testimonials'
 import FAQ from './FAQ'
 import Newsletter from './Newsletter'
+import PricingCalculator from './PricingCalculator'
 import config from './config'
 import './Home.css'
 import './ScrollAnimations.css'
@@ -169,6 +170,9 @@ function Home() {
 
             {/* Newsletter Section */}
             <Newsletter />
+
+            {/* Pricing Calculator Section */}
+            <PricingCalculator />
 
             {/* Contact Section */}
             <section id="contact" className="contact">
