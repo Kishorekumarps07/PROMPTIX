@@ -1,0 +1,305 @@
+.multi-step-contact {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-xl);
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+}
+
+/* Steps Indicator */
+.steps-indicator {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex: 1;
+    position: relative;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all var(--transition-normal);
+    z-index: 1;
+}
+
+.step-item.active .step-circle {
+    background: var(--primary-gradient);
+    border-color: transparent;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.step-item.completed .step-circle {
+    background: var(--success-color);
+    border-color: transparent;
+    color: white;
+}
+
+.step-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: center;
+}
+
+.step-item.active .step-label {
+    color: var(--primary-color);
+}
+
+/* Form Steps */
+.contact-form-multi {
+    min-height: 500px;
+}
+
+.form-step {
+    animation: fadeSlideIn 0.4s ease-out;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-step h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.step-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.05rem;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #ef4444;
+}
+
+.error-message {
+    display: block;
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: var(--spacing-xs);
+}
+
+/* Radio Grid */
+.radio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.radio-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.radio-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-option span {
+    display: block;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+
+.radio-option input:checked+span {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.radio-option:hover span {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Checkbox Grid */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.checkbox-option:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-card-hover);
+}
+
+.checkbox-option input {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-option input:checked+span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Form Navigation */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+}
+
+.form-navigation .btn {
+    min-width: 150px;
+    justify-content: center;
+}
+
+.form-navigation .btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.form-navigation .btn-secondary:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-card-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .multi-step-contact {
+        padding: var(--spacing-lg);
+    }
+
+    .steps-indicator {
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    .step-item {
+        flex-basis: calc(50% - var(--spacing-sm));
+    }
+
+    .step-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .step-label {
+        font-size: 0.75rem;
+    }
+
+    .form-step h3 {
+        font-size: 1.5rem;
+    }
+
+    .radio-grid,
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-navigation {
+        flex-direction: column-reverse;
+    }
+
+    .form-navigation .btn {
+        width: 100%;
+    }
+}
