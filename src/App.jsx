@@ -14,6 +14,7 @@ import './GlobalBackground.css';
 import './MobileOptimizations.css';
 import './MobileFixes.css';
 import './FinalMobileFix.css'; // MUST BE LAST!
+import './ThemeToggleMobileFix.css'; // Theme toggle fix for mobile
 
 // Components
 import ErrorBoundary from './ErrorBoundary';
