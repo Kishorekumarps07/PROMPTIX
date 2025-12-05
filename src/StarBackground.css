@@ -1,12 +1,166 @@
-.star-background {
+.weather-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 0;
     overflow: hidden;
+}
+
+/* ===== SUN (Light Mode) ===== */
+.sun {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #ffd700 0%, #ffed4e 40%, #ff9800 100%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    box-shadow:
+        0 0 40px rgba(255, 215, 0, 0.8),
+        0 0 80px rgba(255, 215, 0, 0.6),
+        0 0 120px rgba(255, 215, 0, 0.4);
+    animation: sunPulse 4s ease-in-out infinite;
+}
+
+[data-theme="light"] .sun {
+    opacity: 1;
+}
+
+@keyframes sunPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 40px rgba(255, 215, 0, 0.8),
+            0 0 80px rgba(255, 215, 0, 0.6),
+            0 0 120px rgba(255, 215, 0, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow:
+            0 0 50px rgba(255, 215, 0, 0.9),
+            0 0 100px rgba(255, 215, 0, 0.7),
+            0 0 150px rgba(255, 215, 0, 0.5);
+    }
+}
+
+/* Sun Rays */
+.sun-rays {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+[data-theme="light"] .sun-rays {
+    opacity: 1;
+}
+
+.sun-ray {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.8), transparent);
+    transform-origin: top center;
+    transform: translate(-50%, 0) rotate(calc(var(--i) * 30deg));
+    animation: sunRayRotate 20s linear infinite;
+}
+
+@keyframes sunRayRotate {
+    from {
+        transform: translate(-50%, 0) rotate(calc(var(--i) * 30deg));
+    }
+
+    to {
+        transform: translate(-50%, 0) rotate(calc(var(--i) * 30deg + 360deg));
+    }
+}
+
+/* ===== MOON (Dark Mode) ===== */
+.moon {
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 30% 30%, #f4f4f4 0%, #d4d4d4 50%, #b0b0b0 100%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.5),
+        0 0 60px rgba(255, 255, 255, 0.3),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.2);
+    animation: moonFloat 6s ease-in-out infinite;
+}
+
+[data-theme="dark"] .moon {
+    opacity: 1;
+}
+
+@keyframes moonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Moon Craters */
+.moon-crater {
+    position: absolute;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.crater-1 {
+    width: 25px;
+    height: 25px;
+    top: 30%;
+    left: 25%;
+}
+
+.crater-2 {
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    left: 55%;
+}
+
+.crater-3 {
+    width: 15px;
+    height: 15px;
+    top: 65%;
+    left: 35%;
+}
+
+/* ===== STARS (Dark Mode) ===== */
+.stars-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+[data-theme="dark"] .stars-container {
+    opacity: 1;
 }
 
 .star {
@@ -83,71 +237,25 @@
     }
 }
 
-/* Light mode - purple/indigo blinking stars */
-[data-theme="light"] .star {
-    background: #6366f1;
-    filter: drop-shadow(0 0 2px #6366f1);
-    animation: blinkLightMode 3s ease-in-out infinite;
-}
+/* Responsive */
+@media (max-width: 768px) {
 
-@keyframes blinkLightMode {
-    0% {
-        opacity: 0.1;
-        transform: scale(0.6);
-        box-shadow:
-            0 0 2px #6366f1,
-            0 0 4px #6366f1;
+    .sun,
+    .sun-rays {
+        width: 100px;
+        height: 100px;
+        top: 5%;
+        right: 5%;
     }
 
-    15% {
-        opacity: 0.9;
-        transform: scale(1.8);
-        box-shadow:
-            0 0 10px #6366f1,
-            0 0 20px #6366f1,
-            0 0 30px rgba(99, 102, 241, 0.8),
-            0 0 40px rgba(99, 102, 241, 0.6);
+    .moon {
+        width: 80px;
+        height: 80px;
+        top: 5%;
+        right: 5%;
     }
 
-    25% {
-        opacity: 0.15;
-        transform: scale(1);
-        box-shadow:
-            0 0 3px #6366f1,
-            0 0 6px #6366f1;
-    }
-
-    40% {
-        opacity: 0.8;
-        transform: scale(1.6);
-        box-shadow:
-            0 0 8px #6366f1,
-            0 0 16px #6366f1,
-            0 0 24px rgba(99, 102, 241, 0.7);
-    }
-
-    60% {
-        opacity: 0.1;
-        transform: scale(0.8);
-        box-shadow:
-            0 0 2px #6366f1,
-            0 0 4px #6366f1;
-    }
-
-    75% {
-        opacity: 0.7;
-        transform: scale(1.4);
-        box-shadow:
-            0 0 6px #6366f1,
-            0 0 12px #6366f1,
-            0 0 18px rgba(99, 102, 241, 0.6);
-    }
-
-    100% {
-        opacity: 0.1;
-        transform: scale(0.6);
-        box-shadow:
-            0 0 2px #6366f1,
-            0 0 4px #6366f1;
+    .sun-ray {
+        height: 60px;
     }
 }
