@@ -13,6 +13,7 @@ import About from './About'
 import Contact from './Contact'
 import './App.css'
 import './SmoothScroll.css'
+import './GlobalBackground.css'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

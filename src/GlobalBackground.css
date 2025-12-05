@@ -1,0 +1,77 @@
+/* Ensure weather background is visible on all pages */
+
+/* Main app container */
+.app {
+    min-height: 100vh;
+    background: transparent !important;
+    position: relative;
+}
+
+/* All page containers should be transparent */
+.home-page,
+.about-page,
+.contact-page {
+    background: transparent !important;
+}
+
+/* All section containers should be transparent to show background */
+.portfolio-section,
+.blog-section,
+.pricing-calculator-section,
+.faq-section,
+.testimonials-section,
+.newsletter-section,
+.contact-content,
+.skeleton-demo-page {
+    background: transparent !important;
+}
+
+/* Only specific content blocks should have backgrounds */
+.card,
+.contact-hero,
+.company-intro,
+.mission-vision,
+.team-section,
+.blog-card,
+.portfolio-card,
+.testimonial-card,
+.faq-item,
+.newsletter-card,
+.pricing-card,
+.multi-step-contact,
+.contact-info-section,
+.contact-form-section {
+    background: var(--bg-card);
+}
+
+/* Ensure star/weather background is always behind content */
+.star-background,
+.weather-background {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0 !important;
+    pointer-events: none;
+}
+
+/* All content should be above the background */
+.navbar,
+.content,
+section,
+.container,
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure body background doesn't block stars */
+body {
+    background: var(--bg-primary) !important;
+}
+
+/* Make sure sections don't have solid backgrounds */
+section:not(.contact-hero):not(.company-intro):not(.mission-vision):not(.team-section) {
+    background: transparent !important;
+}
