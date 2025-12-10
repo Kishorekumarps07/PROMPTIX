@@ -1,0 +1,342 @@
+/* ========================================
+   ENHANCED HOVER LIFT EFFECTS
+   Interactive card animations
+   ======================================== */
+
+/* Base card styles for all interactive cards */
+.card,
+.service-card,
+.blog-card,
+.faq-item,
+.team-card,
+.pricing-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    cursor: pointer !important;
+}
+
+/* Hover lift effect - Desktop only */
+@media (hover: hover) {
+
+    /* Service Cards */
+    .service-card:hover {
+        transform: translateY(-12px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2) !important;
+        border-color: var(--primary-color) !important;
+        z-index: 10 !important;
+    }
+
+    .service-card:hover .service-icon {
+        transform: scale(1.15) rotate(5deg);
+        filter: drop-shadow(0 8px 16px rgba(var(--primary-rgb), 0.4));
+    }
+
+    /* Blog Cards */
+    .blog-card:hover {
+        transform: translateY(-12px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2) !important;
+        border-color: var(--primary-color) !important;
+        z-index: 10 !important;
+    }
+
+    .blog-card:hover .blog-image {
+        transform: scale(1.1);
+    }
+
+    .blog-image {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    /* FAQ Items */
+    .faq-item:hover {
+        transform: translateX(8px) !important;
+        box-shadow: -4px 8px 30px rgba(0, 0, 0, 0.15) !important;
+        border-color: var(--primary-color) !important;
+        background: var(--bg-card-hover) !important;
+    }
+
+    .faq-question:hover {
+        color: var(--primary-color) !important;
+    }
+
+    /* Team Cards (About page) */
+    .team-card:hover {
+        transform: translateY(-12px) scale(1.02) !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2) !important;
+        border-color: var(--primary-color) !important;
+    }
+
+    .team-card:hover .team-avatar {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .team-avatar {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Generic Cards */
+    .card:hover {
+        transform: translateY(-10px) scale(1.02) !important;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.18) !important;
+        border-color: var(--primary-color) !important;
+    }
+}
+
+/* Glow effect on hover */
+.service-card::after,
+.blog-card::after,
+.team-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.4);
+}
+
+@media (hover: hover) {
+
+    .service-card:hover::after,
+    .blog-card:hover::after,
+    .team-card:hover::after {
+        opacity: 1;
+    }
+}
+
+/* Shine effect on hover */
+.service-card::before,
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+@media (hover: hover) {
+
+    .service-card:hover::before,
+    .blog-card:hover::before {
+        left: 100%;
+    }
+}
+
+/* Button hover effects */
+.btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+@media (hover: hover) {
+    .btn:hover {
+        transform: translateY(-3px) scale(1.05) !important;
+        box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.4) !important;
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 8px 30px rgba(var(--primary-rgb), 0.5) !important;
+    }
+
+    .btn-secondary:hover {
+        background: var(--primary-gradient) !important;
+        color: white !important;
+        border-color: transparent !important;
+    }
+}
+
+/* Ripple effect for buttons */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Newsletter input hover */
+.newsletter-input:hover {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.1) !important;
+}
+
+/* Contact form inputs hover */
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 2px 10px rgba(var(--primary-rgb), 0.1) !important;
+}
+
+/* Social links hover (footer) */
+.social-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@media (hover: hover) {
+    .social-link:hover {
+        transform: translateY(-5px) rotate(10deg) scale(1.1) !important;
+        box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.4) !important;
+    }
+}
+
+/* Navigation links hover */
+.nav-links a {
+    position: relative !important;
+    transition: color 0.3s ease !important;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
+}
+
+@media (hover: hover) {
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+}
+
+/* Mobile nav links hover */
+.mobile-nav-links a {
+    transition: all 0.3s ease !important;
+}
+
+.mobile-nav-links a:active {
+    transform: translateX(5px) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Back to top button hover */
+.back-to-top {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@media (hover: hover) {
+    .back-to-top:hover {
+        transform: translateY(-5px) scale(1.1) !important;
+        box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.4) !important;
+    }
+}
+
+/* Live chat button hover */
+.chat-button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@media (hover: hover) {
+    .chat-button:hover {
+        transform: scale(1.15) rotate(5deg) !important;
+        box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.5) !important;
+    }
+}
+
+/* Category buttons hover */
+.category-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@media (hover: hover) {
+    .category-btn:hover {
+        transform: translateY(-3px) scale(1.05) !important;
+        box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.3) !important;
+    }
+}
+
+/* Active state for touch devices */
+@media (hover: none) {
+
+    .service-card:active,
+    .blog-card:active,
+    .team-card:active,
+    .card:active {
+        transform: scale(0.98) !important;
+        opacity: 0.9 !important;
+    }
+
+    .btn:active {
+        transform: scale(0.95) !important;
+    }
+
+    .social-link:active {
+        transform: scale(0.9) !important;
+    }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Accessibility - Focus states */
+.service-card:focus,
+.blog-card:focus,
+.team-card:focus,
+.card:focus,
+.btn:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+
+    .card,
+    .service-card,
+    .blog-card,
+    .faq-item,
+    .team-card,
+    .btn,
+    .social-link,
+    .back-to-top,
+    .chat-button {
+        transition: none !important;
+    }
+
+    .service-card:hover,
+    .blog-card:hover,
+    .team-card:hover,
+    .card:hover,
+    .btn:hover {
+        transform: none !important;
+    }
+}
+
+/* Performance optimization */
+.service-card,
+.blog-card,
+.team-card,
+.card {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}

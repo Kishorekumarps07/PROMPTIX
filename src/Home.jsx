@@ -5,7 +5,6 @@ import { useToast } from './ToastContext'
 import FAQ from './FAQ'
 import Newsletter from './Newsletter'
 import Blog from './Blog'
-import Stats from './Stats'
 import config from './config'
 import './Home.css'
 import './ScrollAnimations.css'
@@ -161,9 +160,6 @@ function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* Stats Section with Animated Counters */}
-            <Stats />
 
             {/* FAQ Section */}
             <FAQ />

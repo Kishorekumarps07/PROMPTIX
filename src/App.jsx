@@ -17,6 +17,7 @@ import './ThemeToggleMobileFix.css'; // Theme toggle fix
 import './StaggeredAnimations.css'; // Staggered card animations
 import './VisualEnhancements.css'; // Visual enhancements and better styling
 import './ModernFooter.css'; // Modern footer design
+import './HoverEffects.css'; // Enhanced hover lift effects
 
 // Components
 import ErrorBoundary from './ErrorBoundary';
