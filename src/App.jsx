@@ -15,6 +15,7 @@ import './CleanMobileUX.css'; // CLEAN MOBILE UX - FINAL FIX
 import './PortfolioScrollMobile.css'; // Portfolio horizontal scroll
 import './ThemeToggleMobileFix.css'; // Theme toggle fix
 import './StaggeredAnimations.css'; // Staggered card animations
+import './VisualEnhancements.css'; // Visual enhancements and better styling
 
 // Components
 import ErrorBoundary from './ErrorBoundary';
