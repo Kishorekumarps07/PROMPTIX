@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
 import { useTypingEffect } from './hooks/useTypingEffect'
 import { useToast } from './ToastContext'
-import Testimonials from './Testimonials'
 import FAQ from './FAQ'
 import Newsletter from './Newsletter'
 import Blog from './Blog'
@@ -161,9 +160,6 @@ function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* Testimonials Section */}
-            <Testimonials />
 
             {/* FAQ Section */}
             <FAQ />
