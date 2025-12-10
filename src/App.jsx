@@ -16,6 +16,7 @@ import './PortfolioScrollMobile.css'; // Portfolio horizontal scroll
 import './ThemeToggleMobileFix.css'; // Theme toggle fix
 import './StaggeredAnimations.css'; // Staggered card animations
 import './VisualEnhancements.css'; // Visual enhancements and better styling
+import './ModernFooter.css'; // Modern footer design
 
 // Components
 import ErrorBoundary from './ErrorBoundary';
@@ -135,10 +136,29 @@ function App() {
             <footer className="footer">
               <div className="container">
                 <div className="footer-content">
+                  {/* Company Section */}
                   <div className="footer-section">
                     <h3>PromptiX</h3>
-                    <p>Building amazing digital experiences</p>
+                    <p>Building amazing digital experiences that transform businesses and delight users.</p>
+
+                    {/* Social Links */}
+                    <div className="social-links">
+                      <a href="#" className="social-link" aria-label="Twitter">
+                        <span>𝕏</span>
+                      </a>
+                      <a href="#" className="social-link" aria-label="LinkedIn">
+                        <span>in</span>
+                      </a>
+                      <a href="#" className="social-link" aria-label="GitHub">
+                        <span>⚡</span>
+                      </a>
+                      <a href="#" className="social-link" aria-label="Instagram">
+                        <span>📷</span>
+                      </a>
+                    </div>
                   </div>
+
+                  {/* Quick Links */}
                   <div className="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
@@ -147,14 +167,24 @@ function App() {
                       <li><Link to="/contact">Contact</Link></li>
                     </ul>
                   </div>
+
+                  {/* Contact */}
                   <div className="footer-section">
                     <h4>Contact</h4>
-                    <p>info@promptix.com</p>
-                    <p>+1 (555) 123-4567</p>
+                    <p data-icon="📧">info@promptix.com</p>
+                    <p data-icon="📞">+1 (555) 123-4567</p>
+                    <p data-icon="📍">San Francisco, CA</p>
                   </div>
                 </div>
+
+                {/* Footer Bottom */}
                 <div className="footer-bottom">
                   <p>&copy; 2024 PromptiX. All rights reserved.</p>
+                  <div className="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                  </div>
                 </div>
               </div>
             </footer>
