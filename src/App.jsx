@@ -12,6 +12,7 @@ import './App.css';
 import './SmoothScroll.css';
 import './GlobalBackground.css';
 import './CleanMobileUX.css'; // CLEAN MOBILE UX - FINAL FIX
+import './PortfolioScrollMobile.css'; // Portfolio horizontal scroll
 import './ThemeToggleMobileFix.css'; // Theme toggle fix
 
 // Components

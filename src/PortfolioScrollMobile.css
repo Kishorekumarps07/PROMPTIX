@@ -1,0 +1,255 @@
+/* ========================================
+   PORTFOLIO HORIZONTAL SCROLL - MOBILE
+   Swipeable carousel effect for portfolio
+   ======================================== */
+
+@media screen and (max-width: 768px) {
+
+    /* ========== PORTFOLIO SECTION ========== */
+    .portfolio-section {
+        padding: 3rem 0 !important;
+        overflow: hidden !important;
+    }
+
+    .portfolio-header {
+        padding: 0 1.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .portfolio-categories {
+        padding: 0 1.5rem !important;
+        margin-bottom: 2rem !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+
+    .portfolio-categories::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* ========== HORIZONTAL SCROLL CONTAINER ========== */
+    .portfolio-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        padding: 0 1.5rem 2rem !important;
+        margin: 0 !important;
+    }
+
+    .portfolio-grid::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* ========== PORTFOLIO CARDS ========== */
+    .portfolio-card {
+        flex: 0 0 85% !important;
+        min-width: 85% !important;
+        max-width: 85% !important;
+        scroll-snap-align: center !important;
+        scroll-snap-stop: always !important;
+        padding: 2rem 1.5rem !important;
+        min-height: 400px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        background: var(--bg-card) !important;
+        border-radius: 1.25rem !important;
+        box-shadow: var(--shadow-lg) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    /* Active card effect */
+    .portfolio-card:active {
+        transform: scale(0.98) !important;
+    }
+
+    /* ========== CARD CONTENT ========== */
+    .portfolio-emoji {
+        font-size: 4rem !important;
+        margin-bottom: 1.5rem !important;
+        display: block !important;
+        text-align: center !important;
+    }
+
+    .portfolio-card h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+    }
+
+    .portfolio-meta {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+        flex-wrap: wrap !important;
+    }
+
+    .portfolio-meta span {
+        font-size: 0.9rem !important;
+        color: var(--text-secondary) !important;
+    }
+
+    .portfolio-description {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        color: var(--text-secondary) !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+        flex-grow: 1 !important;
+    }
+
+    .portfolio-tags {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .portfolio-tag {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.85rem !important;
+        background: var(--primary-gradient) !important;
+        color: white !important;
+        border-radius: 1rem !important;
+    }
+
+    .portfolio-card .btn {
+        width: 100% !important;
+        padding: 0.875rem 1.5rem !important;
+        margin-top: auto !important;
+    }
+
+    /* ========== SCROLL INDICATOR ========== */
+    .portfolio-scroll-indicator {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        margin-top: 1.5rem !important;
+        padding: 0 1.5rem !important;
+    }
+
+    .scroll-dot {
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50% !important;
+        background: var(--border-color) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .scroll-dot.active {
+        width: 24px !important;
+        border-radius: 4px !important;
+        background: var(--primary-color) !important;
+    }
+
+    /* ========== SWIPE HINT ========== */
+    .swipe-hint {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        padding: 1rem !important;
+        color: var(--text-secondary) !important;
+        font-size: 0.9rem !important;
+        animation: swipeHint 2s ease-in-out infinite !important;
+    }
+
+    @keyframes swipeHint {
+
+        0%,
+        100% {
+            transform: translateX(0);
+            opacity: 0.6;
+        }
+
+        50% {
+            transform: translateX(10px);
+            opacity: 1;
+        }
+    }
+
+    .swipe-hint::after {
+        content: '👉' !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* ========== MODAL ADJUSTMENTS ========== */
+    .portfolio-modal {
+        padding: 0 !important;
+    }
+
+    .portfolio-modal .modal-content {
+        width: 95% !important;
+        max-width: 95vw !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+        margin: 1rem auto !important;
+    }
+
+    .modal-header {
+        position: sticky !important;
+        top: 0 !important;
+        background: var(--bg-card) !important;
+        z-index: 10 !important;
+        padding: 1.5rem !important;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+
+    .modal-body {
+        padding: 1.5rem !important;
+    }
+
+    .project-details {
+        margin-bottom: 2rem !important;
+    }
+
+    .project-section {
+        margin-bottom: 2rem !important;
+    }
+
+    .project-section h4 {
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .results-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    .result-item {
+        padding: 0.75rem !important;
+        background: var(--bg-secondary) !important;
+        border-radius: 0.5rem !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 480px) {
+    .portfolio-card {
+        flex: 0 0 90% !important;
+        min-width: 90% !important;
+        max-width: 90% !important;
+    }
+
+    .portfolio-emoji {
+        font-size: 3.5rem !important;
+    }
+
+    .portfolio-card h3 {
+        font-size: 1.3rem !important;
+    }
+}
