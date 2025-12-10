@@ -11,8 +11,7 @@ import { useSmoothScroll, useActiveSection } from './hooks/useSmoothScroll';
 import './App.css';
 import './SmoothScroll.css';
 import './GlobalBackground.css';
-import './UltimateMobileFix.css'; // ULTIMATE MOBILE FIX - MUST BE LAST!
-import './MobileMenuFix.css'; // Mobile menu button fix
+import './CleanMobileUX.css'; // CLEAN MOBILE UX - FINAL FIX
 import './ThemeToggleMobileFix.css'; // Theme toggle fix
 
 // Components
