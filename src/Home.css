@@ -38,9 +38,14 @@
     justify-content: center;
     /* Center vertically */
     position: relative;
-    padding: 0 2rem;
+    padding-top: 80px;
+    /* Offset for fixed navbar to ensure optical center */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0;
     overflow: hidden;
     margin-top: 0;
+    box-sizing: border-box;
 }
 
 .hero-background {
@@ -57,6 +62,7 @@
 
 .hero-content {
     max-width: 800px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -434,6 +440,8 @@
 @media (max-width: 768px) {
     .hero {
         padding: 0 1rem;
+        padding-top: 80px;
+        /* Add this also for mobile if you want it vertically centered relative to navbar */
         height: 100vh;
         min-height: 100vh;
         justify-content: center;
