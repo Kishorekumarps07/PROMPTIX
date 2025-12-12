@@ -58,10 +58,22 @@
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  /* Slightly larger for brand impact */
   font-weight: 800;
   text-decoration: none;
   transition: transform var(--transition-fast);
+  color: var(--text-primary);
+  /* Optional: Add gradient if desired, or solid brand color */
+  /* background: var(--primary-gradient); 
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent; */
+}
+
+/* Ensure logo visibility in light mode if not using gradient */
+[data-theme="light"] .logo {
+  color: var(--brand-navy);
+  /* Deep Navy */
 }
 
 .logo:hover {
