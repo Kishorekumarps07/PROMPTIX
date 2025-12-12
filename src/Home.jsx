@@ -86,11 +86,29 @@ function Home() {
                 }}
             ></div>
             {/* Hero Section */}
-            <section className="hero">
+            {/* Hero Section */}
+            <section className="hero" style={{
+                minHeight: '100vh',
+                paddingTop: '30vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'flex-start'
+            }}>
                 <div className="hero-background"></div>
-                <div className="container">
+                <div className="container" style={{ width: '100%', maxWidth: '1200px' }}>
                     <div className="hero-content">
-                        <h1 className="animate-fade-in-up">
+                        <h1 className="animate-fade-in-up" style={{
+                            fontSize: '4.5rem',
+                            fontWeight: '800',
+                            marginBottom: '1rem',
+                            background: 'linear-gradient(to right, #ffffff, var(--primary-color), #ffffff)',
+                            WebkitBackgroundClip: 'text',
+                            backgroundClip: 'text',
+                            color: 'transparent',
+                            textShadow: '0 0 30px rgba(124, 58, 237, 0.3)',
+                            lineHeight: '1.2'
+                        }}>
                             Welcome to PromptiX
                         </h1>
                         <p className="hero-tagline animate-fade-in-up animate-delay-1">
