@@ -12,7 +12,8 @@
     position: fixed;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(59, 130, 246, 0.05) 40%, transparent 70%);
+    /* Updated flare to Blue/Cyan */
+    background: radial-gradient(circle, rgba(30, 64, 175, 0.15) 0%, rgba(6, 182, 212, 0.05) 40%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -23,7 +24,8 @@
 }
 
 [data-theme="light"] .cursor-flare {
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(59, 130, 246, 0.05) 40%, transparent 70%);
+    /* Blue/Teal flare for light mode */
+    background: radial-gradient(circle, rgba(30, 64, 175, 0.1) 0%, rgba(6, 182, 212, 0.05) 40%, transparent 70%);
     mix-blend-mode: multiply;
 }
 
@@ -54,9 +56,10 @@
     left: 0;
     right: 0;
     bottom: 0;
+    /* Updated Background Gradients to Navy/Blue/Teal */
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 30%, rgba(30, 64, 175, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
     animation: pulse-bg 10s ease-in-out infinite alternate;
 }
 
@@ -76,7 +79,7 @@
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    /* Use explicit colors to ensure visibility */
+    /* Gradient: White -> Blue -> White */
     background: linear-gradient(to right, #ffffff, var(--primary-color), #ffffff);
     -webkit-background-clip: text;
     background-clip: text;
@@ -84,19 +87,21 @@
     background-size: 200% auto;
     animation: text-shimmer 3s linear infinite;
     line-height: 1.1;
-    text-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
+    /* Shadow updated to Blue */
+    text-shadow: 0 0 40px rgba(30, 64, 175, 0.3);
 }
 
 /* Fallback for light theme */
 [data-theme="light"] .hero h1 {
-    background: linear-gradient(to right, #1a1a1a, var(--primary-color), #1a1a1a);
+    background: linear-gradient(to right, #0b1c48, var(--primary-color), #0b1c48);
     -webkit-background-clip: text;
     background-clip: text;
 }
 
 .hero-tagline {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    /* Use Orange accent for tagline */
     margin-bottom: 1.5rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -112,7 +117,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
     transform: scaleX(0);
     animation: line-expand 1s ease-out forwards 1s;
 }
@@ -147,12 +152,12 @@
 .btn-primary {
     background: var(--primary-gradient);
     color: white;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.6);
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.6);
 }
 
 .btn-primary::before {
@@ -196,7 +201,7 @@
 .decoration-circle {
     position: absolute;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(59, 130, 246, 0.2));
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(6, 182, 212, 0.2));
     backdrop-filter: blur(5px);
     animation: float-random 20s infinite linear;
 }
@@ -215,7 +220,8 @@
     bottom: 10%;
     left: -5%;
     animation-delay: -5s;
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(124, 58, 237, 0.2));
+    /* Orange/Amber gradient */
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(251, 191, 36, 0.2));
 }
 
 .decoration-circle:nth-child(3) {
@@ -224,7 +230,8 @@
     top: 40%;
     right: 15%;
     animation-delay: -10s;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.2));
+    /* Blue/Teal gradient */
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
 }
 
 /* Services Section */
@@ -336,7 +343,7 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2);
     transform: scale(1.01);
 }
 
