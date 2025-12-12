@@ -1,9 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
-import { ThemeProvider } from './ThemeContext';
-import ThemeToggle from './ThemeToggle';
-import StarBackground from './StarBackground';
+// Theme components removed
 import ClickEffect from './ClickEffect';
 import BackToTop from './BackToTop';
 import ScrollProgress from './ScrollProgress';
