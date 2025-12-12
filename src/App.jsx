@@ -56,142 +56,137 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <ThemeProvider>
-        <Router>
-          <div className="app">
-            <StarBackground />
-            <ClickEffect />
-            <BackToTop />
-            <ScrollProgress />
+      {/* ThemeProvider removed */}
+      <Router>
+        <div className="app">
+          {/* StarBackground removed for clean corporate look */}
+          <ClickEffect />
+          <BackToTop />
+          <ScrollProgress />
 
-            {/* Navigation */}
-            <nav className="navbar">
-              <div className="container">
-                <div className="nav-content">
-                  <Link to="/" className="logo" onClick={closeMobileMenu}>
-                    PromptiX
-                  </Link>
+          {/* Navigation */}
+          <nav className="navbar">
+            <div className="container">
+              <div className="nav-content">
+                <Link to="/" className="logo" onClick={closeMobileMenu}>
+                  PromptiX
+                </Link>
 
-                  {/* Desktop Navigation */}
-                  <div className="desktop-nav">
-                    <ul className="nav-links">
-                      <li><Link to="/">Home</Link></li>
-                      <li><Link to="/about">About</Link></li>
-                      <li><Link to="/contact">Contact</Link></li>
-                    </ul>
-                    <ThemeToggle />
-                  </div>
-
-                  {/* Mobile Controls (Theme + Menu Button) */}
-                  <div className="mobile-controls">
-                    {/* Mobile Theme Toggle - Always visible */}
-                    <div className="mobile-header-theme">
-                      <ThemeToggle />
-                    </div>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                      className={`mobile-menu-btn ${mobileMenuOpen ? 'open' : ''}`}
-                      onClick={toggleMobileMenu}
-                      aria-label="Toggle menu"
-                    >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Mobile Navigation */}
-                <div className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
-                  <ul className="mobile-nav-links">
-                    <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
-                    <li><Link to="/about" onClick={closeMobileMenu}>About</Link></li>
-                    <li><Link to="/contact" onClick={closeMobileMenu}>Contact</Link></li>
+                {/* Desktop Navigation */}
+                <div className="desktop-nav">
+                  <ul className="nav-links">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                   </ul>
-                  <div className="mobile-theme-toggle">
-                    <ThemeToggle />
-                  </div>
+                  {/* ThemeToggle removed */}
+                </div>
+
+                {/* Mobile Controls (Menu Button Only) */}
+                <div className="mobile-controls">
+                  {/* Mobile Theme Toggle removed */}
+
+                  {/* Mobile Menu Button */}
+                  <button
+                    className={`mobile-menu-btn ${mobileMenuOpen ? 'open' : ''}`}
+                    onClick={toggleMobileMenu}
+                    aria-label="Toggle menu"
+                  >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
                 </div>
               </div>
-            </nav>
 
-            {/* Main Content with Lazy Loading */}
-            <main>
-              <Suspense fallback={<PageLoader />}>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </main>
+              {/* Mobile Navigation */}
+              <div className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
+                <ul className="mobile-nav-links">
+                  <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
+                  <li><Link to="/about" onClick={closeMobileMenu}>About</Link></li>
+                  <li><Link to="/contact" onClick={closeMobileMenu}>Contact</Link></li>
+                </ul>
+                {/* Mobile Theme Toggle removed */}
+              </div>
+            </div>
+          </nav>
 
-            {/* Lazy load LiveChat */}
-            <Suspense fallback={null}>
-              <LiveChat />
+          {/* Main Content with Lazy Loading */}
+          <main>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
             </Suspense>
+          </main>
 
-            {/* Footer */}
-            <footer className="footer">
-              <div className="container">
-                <div className="footer-content">
-                  {/* Company Section */}
-                  <div className="footer-section">
-                    <h3>PromptiX</h3>
-                    <p>Building amazing digital experiences that transform businesses and delight users.</p>
+          {/* Lazy load LiveChat */}
+          <Suspense fallback={null}>
+            <LiveChat />
+          </Suspense>
 
-                    {/* Social Links */}
-                    <div className="social-links">
-                      <a href="#" className="social-link" aria-label="Twitter">
-                        <span>𝕏</span>
-                      </a>
-                      <a href="#" className="social-link" aria-label="LinkedIn">
-                        <span>in</span>
-                      </a>
-                      <a href="#" className="social-link" aria-label="GitHub">
-                        <span>⚡</span>
-                      </a>
-                      <a href="#" className="social-link" aria-label="Instagram">
-                        <span>📷</span>
-                      </a>
-                    </div>
-                  </div>
+          {/* Footer */}
+          <footer className="footer">
+            <div className="container">
+              <div className="footer-content">
+                {/* Company Section */}
+                <div className="footer-section">
+                  <h3>PromptiX</h3>
+                  <p>Building amazing digital experiences that transform businesses and delight users.</p>
 
-                  {/* Quick Links */}
-                  <div className="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                      <li><Link to="/">Home</Link></li>
-                      <li><Link to="/about">About</Link></li>
-                      <li><Link to="/contact">Contact</Link></li>
-                    </ul>
-                  </div>
-
-                  {/* Contact */}
-                  <div className="footer-section">
-                    <h4>Contact</h4>
-                    <p data-icon="📧">info@promptix.com</p>
-                    <p data-icon="📞">+1 (555) 123-4567</p>
-                    <p data-icon="📍">San Francisco, CA</p>
+                  {/* Social Links */}
+                  <div className="social-links">
+                    <a href="#" className="social-link" aria-label="Twitter">
+                      <span>𝕏</span>
+                    </a>
+                    <a href="#" className="social-link" aria-label="LinkedIn">
+                      <span>in</span>
+                    </a>
+                    <a href="#" className="social-link" aria-label="GitHub">
+                      <span>⚡</span>
+                    </a>
+                    <a href="#" className="social-link" aria-label="Instagram">
+                      <span>📷</span>
+                    </a>
                   </div>
                 </div>
 
-                {/* Footer Bottom */}
-                <div className="footer-bottom">
-                  <p>&copy; 2024 PromptiX. All rights reserved.</p>
-                  <div className="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
-                  </div>
+                {/* Quick Links */}
+                <div className="footer-section">
+                  <h4>Quick Links</h4>
+                  <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                  </ul>
+                </div>
+
+                {/* Contact */}
+                <div className="footer-section">
+                  <h4>Contact</h4>
+                  <p data-icon="📧">info@promptix.com</p>
+                  <p data-icon="📞">+1 (555) 123-4567</p>
+                  <p data-icon="📍">San Francisco, CA</p>
                 </div>
               </div>
-            </footer>
-          </div>
-        </Router>
-      </ThemeProvider>
+
+              {/* Footer Bottom */}
+              <div className="footer-bottom">
+                <p>&copy; 2024 PromptiX. All rights reserved.</p>
+                <div className="footer-links">
+                  <a href="#">Privacy Policy</a>
+                  <a href="#">Terms of Service</a>
+                  <a href="#">Cookie Policy</a>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </Router>
+      {/* ThemeProvider removed */}
     </ErrorBoundary>
   );
 }
