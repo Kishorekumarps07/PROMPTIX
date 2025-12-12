@@ -43,10 +43,11 @@
   top: 0;
   left: 0;
   right: 0;
-  background: var(--bg-card-hover);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-sm) 0;
+  /* Reduced padding slightly */
   z-index: 1000;
   transition: all var(--transition-normal);
 }
@@ -58,26 +59,17 @@
 }
 
 .logo {
-  font-size: 1.8rem;
-  /* Slightly larger for brand impact */
-  font-weight: 800;
   text-decoration: none;
-  transition: transform var(--transition-fast);
-  color: var(--text-primary);
-  /* Optional: Add gradient if desired, or solid brand color */
-  /* background: var(--primary-gradient); 
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent; */
+  display: flex;
+  /* Centers image vertically */
+  align-items: center;
 }
 
-/* Ensure logo visibility in light mode if not using gradient */
-[data-theme="light"] .logo {
-  color: var(--brand-navy);
-  /* Deep Navy */
-}
-
-.logo:hover {
-  transform: scale(1.05);
+.logo-image {
+  height: 48px;
+  /* Adjustable based on logo aspect ratio */
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -164,14 +156,14 @@
   top: 80px;
   left: 0;
   right: 0;
-  background: var(--bg-card-hover);
-  backdrop-filter: blur(20px);
+  background: #ffffff;
   border-bottom: 1px solid var(--border-color);
   padding: 2rem;
   transform: translateY(-100%);
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav.open {
@@ -328,7 +320,12 @@
   }
 
   .logo {
-    font-size: 1.2rem;
+    /* No font-size or weight needed for image logo */
+  }
+
+  .logo-image {
+    height: 40px;
+    /* Smaller logo on mobile */
   }
 
   .footer-content {

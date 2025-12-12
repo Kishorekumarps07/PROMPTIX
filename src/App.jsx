@@ -67,7 +67,7 @@ function App() {
             <div className="container">
               <div className="nav-content">
                 <Link to="/" className="logo" onClick={closeMobileMenu}>
-                  PromptiX
+                  <img src="/promptix-logo.jpg" alt="PromptiX" className="logo-image" />
                 </Link>
 
                 {/* Desktop Navigation */}
