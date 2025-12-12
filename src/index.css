@@ -1,13 +1,26 @@
 :root {
-  /* Common Variables */
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  /* Brand Colors from Logo */
+  --brand-navy: #0b1c48;
+  /* Deep Royal Navy */
+  --brand-blue: #1e40af;
+  /* Brighter Blue */
+  --brand-orange: #ff6b00;
+  /* Flame Orange/Amber */
+  --brand-gold: #fbbf24;
+  /* Flame Light */
 
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
-  --accent-color: #4facfe;
-  --success-color: #43e97b;
+  /* Common Variables - Updated to Blue/Navy Theme */
+  --primary-gradient: linear-gradient(135deg, #1e40af 0%, #0b1c48 100%);
+  --secondary-gradient: linear-gradient(135deg, #ff6b00 0%, #fbbf24 100%);
+  /* Orange Flame Gradient */
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  /* Bright Blue/Cyan */
+
+  --primary-color: #1e40af;
+  --secondary-color: #ff6b00;
+  /* Orange Accent */
+  --accent-color: #06b6d4;
+  --success-color: #10b981;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -32,38 +45,52 @@
 
 /* Light Theme */
 [data-theme="light"] {
-  --bg-primary: #f8fafc;
+  --bg-primary: #f0f4f8;
+  /* Very light cool blue-gray */
   --bg-secondary: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.8);
-  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
 
-  --text-primary: #1e293b;
+  --text-primary: #0b1c48;
+  /* Brand Navy for text */
   --text-secondary: #475569;
   --text-muted: #94a3b8;
 
-  --border-color: rgba(0, 0, 0, 0.1);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
-  --shadow-glow: 0 0 40px rgba(102, 126, 234, 0.2);
+  --border-color: rgba(11, 28, 72, 0.1);
+  --shadow-sm: 0 2px 8px rgba(11, 28, 72, 0.05);
+  --shadow-md: 0 4px 16px rgba(11, 28, 72, 0.1);
+  --shadow-lg: 0 8px 32px rgba(11, 28, 72, 0.15);
+  --shadow-glow: 0 0 40px rgba(30, 64, 175, 0.15);
+
+  --primary-gradient: linear-gradient(135deg, #0b1c48 0%, #1e40af 100%);
+  /* Solid Navy Gradient */
 }
 
 /* Dark Theme (Default) */
 [data-theme="dark"] {
-  --bg-primary: #0f0f23;
-  --bg-secondary: #0a0a15;
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --bg-primary: #020617;
+  /* Almost black navy */
+  --bg-secondary: #0b1121;
+  --bg-card: rgba(11, 28, 72, 0.4);
+  /* Navy tinted glass */
+  --bg-card-hover: rgba(30, 64, 175, 0.2);
 
   --text-primary: #ffffff;
-  --text-secondary: #b4b4c8;
-  --text-muted: #7a7a8c;
+  --text-secondary: #94a3b8;
+  /* Slate-400 */
+  --text-muted: #64748b;
 
-  --border-color: rgba(255, 255, 255, 0.1);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 40px rgba(102, 126, 234, 0.3);
+  --border-color: rgba(59, 130, 246, 0.15);
+  /* Blue tint border */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.2);
+
+  --primary-gradient: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  /* Lighter blue for dark mode text */
+  --primary-color: #60a5fa;
+  /* Blue-400 */
 }
 
 /* Reset & Base Styles */
@@ -143,15 +170,15 @@ p {
 }
 
 .btn-primary {
-  background: var(--primary-gradient);
+  background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+  /* Orange Button for high contrast action */
   color: #ffffff;
-  /* Always white text on gradient */
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
 }
 
 .btn-secondary {
@@ -161,7 +188,7 @@ p {
 }
 
 .btn-secondary:hover {
-  background: var(--primary-gradient);
+  background: var(--primary-color);
   color: #ffffff;
   transform: translateY(-2px);
   border-color: transparent;
@@ -187,7 +214,8 @@ p {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--primary-gradient);
+  background: var(--secondary-gradient);
+  /* Orange accent on top */
   transform: scaleX(0);
   transition: transform var(--transition-normal);
 }
@@ -196,6 +224,8 @@ p {
   background: var(--bg-card-hover);
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-color);
+  /* Orange border on hover */
 }
 
 .card:hover::before {
@@ -229,8 +259,9 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: var(--secondary-color);
+  /* Orange focus */
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
   background: var(--bg-card-hover);
 }
 
